@@ -74,7 +74,7 @@ function Next5Day() {
   return (
     <View style={styles.container}>
       {data && <Text style={styles.city_name}>{data?.name}</Text>}
-      <ScrollView horizontal={true}>
+      <ScrollView horizontal={true} style={styles.scroll}>
         {/*map sur les données météo des jours suivant*/}
         {dataFiveDay?.daily.map((dayData, index) => {
           return <WeatherDay key={index} dayData={dayData} index={index}/>
@@ -85,6 +85,9 @@ function Next5Day() {
 }
 
 const styles = StyleSheet.create({
+  scroll:{
+    paddingLeft: 45
+  },
   container:{
     flex:1,
     backgroundColor: "lightblue",
