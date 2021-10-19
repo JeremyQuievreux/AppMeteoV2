@@ -4,7 +4,6 @@ import { StyleSheet, Text, View, Image} from 'react-native';
 
 
 function WeatherBlock({step}) {
-    
 
     return(
         <View style={styles.weatherBlock}>

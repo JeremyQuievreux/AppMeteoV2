@@ -5,23 +5,28 @@ import { StyleSheet, Text, View , Image } from 'react-native';
 import WeatherBlock from './WeatherBlock';
 
 function Current() {
-
+  //Les states
+    //données météo
   const [data, setData] = useState(null);
+    //données géoloc
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
 
+  //function qui recupere les données de géoloc
   function getGeoloc() {
     (async () => {
-        let { status } = await Location.requestForegroundPermissionsAsync();
-        if (status !== 'granted') {
-          setErrorMsg('Permission to access location was denied');
-          return;
-        }
-        let reslocation = await Location.getCurrentPositionAsync({});
-        setLocation(reslocation);
-      })();
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        setErrorMsg('Permission to access location was denied');
+        return;
+      }
+      let reslocation = await Location.getCurrentPositionAsync({});
+      // Sauvegarde les données de géoloc dans le state
+      setLocation(reslocation);
+    })();
   }
 
+  //Fonction qui récupére les données météo
   function getData() {
     const lat = location?.coords.latitude;
     const lon = location?.coords.longitude;
@@ -35,21 +40,20 @@ function Current() {
         setData(responseObject)
       })
       .catch((err) => console.log(err))
-    }
+  }
 
+  //Au render du composant recupére les infos géoloc
   useEffect(() => {
       getGeoloc();
   }, []);
       
-
-     
   let text = 'Waiting..';
   if (errorMsg) {
       text = errorMsg;
   } else if (location) {
       text = JSON.stringify(location);
   }
-
+  //Quand les données géoloc sont pas null, lance la fonction qui recupere les données météo
   if (location !== null && data === null) {
     getData();
   }
