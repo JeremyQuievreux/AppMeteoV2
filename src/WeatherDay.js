@@ -3,34 +3,34 @@ import React from 'react';
 import { StyleSheet, Text, View, Image} from 'react-native';
 
 
-function WeatherStep({step}) {
+function WeatherDay({dayData, index}) {
     
 
     return(
         <View style={styles.weatherBlock}>
-            <Text style={styles.day}> Le {step.dt_txt}</Text>
+            <Text style={styles.day}>J + {index + 1}</Text>
             <View style={styles.icon_line}>
                 <View style={styles.icon_container}>
                     <Image
                         style={styles.icon}
                         source={{
-                        uri: `http://openweathermap.org/img/wn/${step.weather[0].icon}@2x.png`
+                        uri: `http://openweathermap.org/img/wn/${dayData.weather[0].icon}@2x.png`
                         }}
                     />
                 </View>
-                <Text style={styles.description}>{step.weather[0].description}</Text>
+                <Text style={styles.description}>{dayData.weather[0].description}</Text>
             </View>
             <View style={styles.temp_line}>
                 <View>
                     <Text style={styles.cold}>Min : </Text>
-                    <Text style={styles.temp}>{step.main.temp_min} °C</Text>
+                    <Text style={styles.temp}>{dayData.temp.min} °C</Text>
                 </View>
                 <View>
                     <Text style={styles.hot}>Max : </Text>
-                    <Text style={styles.temp}>{step.main.temp_max} °C</Text>
+                    <Text style={styles.temp}>{dayData.temp.max} °C</Text>
                 </View>
             </View>
-            <Text style={styles.wind}>{step.wind.speed} Km/h</Text>
+            <Text style={styles.wind}>{dayData.wind_speed} Km/h</Text>
         </View>
     )
 }
@@ -99,4 +99,4 @@ const styles = StyleSheet.create({
     }
   });
 
-export default WeatherStep;
+export default WeatherDay;
