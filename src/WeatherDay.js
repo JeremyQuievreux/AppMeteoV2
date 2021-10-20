@@ -43,6 +43,8 @@ const styles = StyleSheet.create({
         margin: 10,
         alignItems:"center",
         borderRadius: 20,
+        borderWidth:3,
+        borderColor: "darkred"
     },
     day:{
         textAlign:"center",

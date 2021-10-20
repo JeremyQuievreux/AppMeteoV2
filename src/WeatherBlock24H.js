@@ -3,10 +3,15 @@ import React from 'react';
 import { StyleSheet, Text, View, Image} from 'react-native';
 
 
-function WeatherBlock({step}) {
+function WeatherBlock24H({step}) {
 
+
+    const hour = step.dt_txt.split(' ')[1].split(':')[0];
+    const minute = step.dt_txt.split(' ')[1].split(':')[1];
+    
     return(
         <View style={styles.weatherBlock}>
+            <Text style={styles.day}> A {hour}H{minute}</Text>
             <View style={styles.icon_line}>
                 <View style={styles.icon_container}>
                     <Image
@@ -37,9 +42,10 @@ function WeatherBlock({step}) {
 const styles = StyleSheet.create({
     weatherBlock:{
         width:"80%",
-        height:400,
         backgroundColor: "white",
         margin: 10,
+        marginLeft:"auto",
+        marginRight:"auto",
         alignItems:"center",
         borderRadius: 20,
         borderWidth:3,
@@ -100,4 +106,4 @@ const styles = StyleSheet.create({
     }
   });
 
-export default WeatherBlock;
+export default WeatherBlock24H;

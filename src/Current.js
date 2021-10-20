@@ -1,6 +1,6 @@
 import React ,{ useEffect, useState } from 'react';
 import * as Location from 'expo-location';
-import { StyleSheet, Text, View , Image } from 'react-native';
+import { StyleSheet, Text, View} from 'react-native';
 
 import WeatherBlock from './WeatherBlock';
 
@@ -61,7 +61,7 @@ function Current() {
   return (
     <View style={styles.container}>
       {data && <Text style={styles.city_name}>{data?.name}</Text>}
-      {data && <WeatherBlock step={data} />}
+      {data && <WeatherBlock step={data}/>}
     </View>
   )
 }
