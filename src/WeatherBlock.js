@@ -7,6 +7,7 @@ function WeatherBlock({step}) {
 
     return(
         <View style={styles.weatherBlock}>
+            <Text style={styles.city}>{step.name}</Text>
             <View style={styles.icon_line}>
                 <View style={styles.icon_container}>
                     <Image
@@ -35,6 +36,15 @@ function WeatherBlock({step}) {
 }
 
 const styles = StyleSheet.create({
+    city:{
+        textAlign:"center",
+        fontSize:20,
+        backgroundColor:"darkred",
+        borderTopLeftRadius: 10,
+        borderTopRightRadius: 10,
+        width:"100%",
+        color:"white"
+    },
     weatherBlock:{
         width:"80%",
         height:400,

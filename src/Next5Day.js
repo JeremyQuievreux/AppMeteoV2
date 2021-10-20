@@ -86,7 +86,7 @@ function Next5Day() {
 
 const styles = StyleSheet.create({
   scroll:{
-    paddingLeft: 45
+    paddingLeft: 45,
   },
   container:{
     flex:1,

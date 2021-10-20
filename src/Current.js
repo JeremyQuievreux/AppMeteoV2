@@ -60,7 +60,6 @@ function Current() {
 
   return (
     <View style={styles.container}>
-      {data && <Text style={styles.city_name}>{data?.name}</Text>}
       {data && <WeatherBlock step={data}/>}
     </View>
   )
@@ -88,6 +87,7 @@ const styles = StyleSheet.create({
     textAlign:"center",
   },
   container: {
+    paddingTop:50,
     flex: 1,
     backgroundColor: 'lightblue',
     alignItems: 'center',
