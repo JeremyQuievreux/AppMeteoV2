@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, Button, Image, Pressable } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Pressable } from 'react-native';
 import WeatherBlock from './WeatherBlock';
 
 function FindPage() {
