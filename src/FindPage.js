@@ -6,6 +6,8 @@ function FindPage() {
     const [city, setCity] = useState("");
     const [data, setData] = useState(null);
 
+    
+
     function getData(city) {
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=5419b3c35aed4c8a44139b48aa78dccc&lang=fr`)
           .then((response) => {
@@ -23,15 +25,9 @@ function FindPage() {
           console.log(data);
       }
 
-      const laTemp = 20
+    
 
-      function setColor() {
-          if (laTemp === 20) {
-              return "blue"
-          } else {
-              return "red"
-          }
-      }
+     
         
     return (
         <View style={styles.container}>
