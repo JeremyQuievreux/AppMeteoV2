@@ -17,6 +17,7 @@ function WeatherBlock({step}) {
                     />
                 </View>
                 <Text style={styles.description}>{step.weather[0].description}</Text>
+                <Text style={styles.description}>{step.main.temp} °C</Text>
             </View>
             <View style={styles.temp_line}>
                 <View>
