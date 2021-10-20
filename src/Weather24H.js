@@ -62,9 +62,6 @@ if (location !== null && data === null) {
   getData();
 }
 
-data && console.log(data.city.name);
-data && console.log(data.list[0]);
-
 let filteredData = []
 
 if (data !== null) {

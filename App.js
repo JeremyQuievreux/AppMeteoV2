@@ -12,12 +12,15 @@ import Current from './src/Current';
 import Next5Day from './src/Next5Day';
 import Weather24H from './src/Weather24H';
 import FindPage from './src/FindPage';
+import StoragePage from './src/StoragePage';
 
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
 
 export default function App() {
 
+
+  
   return (
     
     <NavigationContainer >
@@ -27,6 +30,7 @@ export default function App() {
         <Drawer.Screen name="24H prochaines Heures" component={Weather24H} />
         <Drawer.Screen name="7 prochains jours" component={Next5Day} />
         <Drawer.Screen name="Recherche de Ville" component={FindPage} />
+        <Drawer.Screen name="Test du Storage" component={StoragePage} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
