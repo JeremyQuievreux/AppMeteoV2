@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
-
+//Import du asyncStorage y'a une instal a faire aussi ;)
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 function StoragePage() {
