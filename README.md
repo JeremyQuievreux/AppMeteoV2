@@ -1,6 +1,6 @@
 # App Météo V2
 
-Application météo avec barre de recherche
+TP - Création Application météo avec barre de recherche
 
 ## Technos : 
 - Expo
